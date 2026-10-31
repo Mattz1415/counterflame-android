@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Crosshair icon -->
+    <path
+        android:strokeColor="#00E676"
+        android:strokeWidth="4"
+        android:pathData="M54,24 L54,42 M54,66 L54,84 M24,54 L42,54 M66,54 L84,54" />
+    <path
+        android:strokeColor="#00B0FF"
+        android:strokeWidth="3"
+        android:pathData="M34,34 L40,34 L40,40 M74,34 L68,34 L68,40 M34,74 L40,74 L40,68 M74,74 L68,74 L68,68" />
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M54,51 A3,3 0 1,0 54,57 A3,3 0 1,0 54,51" />
+</vector>

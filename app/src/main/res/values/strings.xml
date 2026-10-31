@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CounterFlame Companion</string>
+    <string name="title_esp_settings">ESP VISUALIZATION</string>
+    <string name="title_aim_settings">AIM ASSIST SIMULATOR</string>
+    <string name="title_sim_settings">ENVIRONMENT CONTROLS</string>
+    <string name="toggle_esp">Enable ESP Overlay</string>
+    <string name="toggle_boxes">2D Bounding Boxes</string>
+    <string name="toggle_corners">Corner Bracket Style</string>
+    <string name="toggle_names">Player Name Labels</string>
+    <string name="toggle_distance">Distance Indicators</string>
+    <string name="toggle_health">Health Bars</string>
+    <string name="toggle_team_colors">Team Colors (T/CT)</string>
+    <string name="toggle_snaplines">Draw Snaplines</string>
+    <string name="toggle_aim_assist">Enable Aim Assist Simulation</string>
+    <string name="toggle_fov_circle">Draw FOV Circle</string>
+    <string name="toggle_movement">Simulate Entity Movement</string>
+    <string name="slider_fov">FOV Radius: %1$d px</string>
+    <string name="slider_smooth">Smoothness / Damping: %1$.1f</string>
+    <string name="slider_opacity">Overlay Opacity: %1$d%%</string>
+    <string name="slider_entities">Entity Count: %1$d</string>
+    <string name="priority_crosshair">Closest Crosshair</string>
+    <string name="priority_health">Lowest Health</string>
+    <string name="priority_distance">Closest Distance</string>
+</resources>

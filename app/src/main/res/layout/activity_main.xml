@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- 60 FPS Tactical Shooter Companion SurfaceView -->
+    <com.scarlet.counterflame.renderer.SimulationSurfaceView
+        android:id="@+id/simulationSurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Top Floating Header Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="COUNTERFLAME COMPANION"
+            android:textColor="@color/primary_accent"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:textSize="14sp" />
+
+        <!-- Floating Settings FAB / Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToggleSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MENU"
+            app:cornerRadius="8dp"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/primary_accent" />
+    </LinearLayout>
+
+    <!-- Floating Draggable/Expandable Material3 Settings Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardFloatingSettings"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/surface_dark"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="8dp"
+        app:strokeColor="@color/border_subtle"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Panel Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/surface_header"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TACTICAL CONFIGURATION"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/btnClosePanel"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+
+            <!-- Scrollable Control List -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:fadeScrollbars="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <!-- Section: ESP VISUALIZATION -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_esp_settings"
+                        android:textColor="@color/secondary_accent"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="6dp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchEsp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_esp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchBoxes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_boxes"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchCorners"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_corners"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchNames"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_names"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchDistance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_distance"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchHealth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_health"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchTeamColors"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_team_colors"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchSnaplines"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_snaplines"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <!-- Opacity Slider -->
+                    <TextView
+                        android:id="@+id/tvOpacityLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overlay Opacity: 95%"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderOpacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="20"
+                        android:valueTo="100"
+                        android:stepSize="5"
+                        android:value="95" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/border_subtle"
+                        android:layout_marginVertical="10dp" />
+
+                    <!-- Section: AIM ASSIST SIMULATOR -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_aim_settings"
+                        android:textColor="@color/primary_accent"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="6dp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchAimAssist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_aim_assist"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchFovCircle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_fov_circle"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <!-- FOV Slider -->
+                    <TextView
+                        android:id="@+id/tvFovLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FOV Radius: 180 px"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderFov"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="60"
+                        android:valueTo="360"
+                        android:stepSize="10"
+                        android:value="180" />
+
+                    <!-- Smoothness Slider -->
+                    <TextView
+                        android:id="@+id/tvSmoothnessLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smoothness / Damping: 6.0"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderSmoothness"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="1.0"
+                        android:valueTo="15.0"
+                        android:stepSize="0.5"
+                        android:value="6.0" />
+
+                    <!-- Target Priority -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Target Selection Priority:"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupPriority"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp">
+
+                        <RadioButton
+                            android:id="@+id/rbPriorityCrosshair"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/priority_crosshair"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbPriorityHealth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/priority_health"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbPriorityDistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/priority_distance"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/border_subtle"
+                        android:layout_marginVertical="10dp" />
+
+                    <!-- Section: ENVIRONMENT -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_sim_settings"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="6dp" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchMovement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/toggle_movement"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <!-- Entity Count Slider -->
+                    <TextView
+                        android:id="@+id/tvEntityCountLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Entity Count: 8"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderEntities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="2"
+                        android:valueTo="16"
+                        android:stepSize="1"
+                        android:value="8" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRespawnEntities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="RESPAWN ARENA ENTITIES"
+                        android:layout_marginTop="8dp"
+                        android:textSize="11sp"
+                        android:fontFamily="monospace"
+                        app:cornerRadius="6dp"
+                        app:backgroundTint="@color/surface_header"
+                        android:textColor="@color/primary_accent" />
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
