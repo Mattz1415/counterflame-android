@@ -179,7 +179,7 @@ class SimulationSurfaceView @JvmOverloads constructor(
     }
 
     fun onResume() {
-        if (!isRunning && holder.surface.isValid) {
+        if (!isRunning && holder.surface?.isValid == true) {
             surfaceCreated(holder)
         }
     }
